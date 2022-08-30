@@ -42,7 +42,7 @@
                             on 
                             {{ .Date.Format "Monday, January 2, 2006" }}
                             {{ if .Site.Params.page_view_conter }}
-                                <span id="busuanzi_container_page_pv"> | <span class="fas fa-book"><b> </b>{{ .WordCount  }} words</span> | <span class="fas fa-clock"><b> </b>{{ .ReadingTime  }} minutes</span>
+                                <span> | <span class="fas fa-book">&nbsp;{{ .WordCount  }}&nbsp;words</span> | <span class="fas fa-clock">&nbsp;{{ .ReadingTime  }}&nbsp;minutes</span>
                             {{ end }}
                             <!-- Don't show "Last Modified on" if update happened on the same day. -->
                             {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
@@ -78,10 +78,6 @@
                 {{ end }}
                 -->
                 {{ .Content }}
-
-                {{ if .Site.Params.reward }}
-                {{ partial "reward.html" . }}
-                {{ end }}
 
                 {{ if or (.PrevInSection) (.NextInSection) }}
                 <hr>
