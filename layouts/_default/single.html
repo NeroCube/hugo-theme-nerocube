@@ -44,7 +44,7 @@
                             {{ if .Site.Params.page_view_conter }}
                                 <span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span>
                                 {{ partial "page_view_counter.html" .  }}
-                                </span></span> | <span class="fas fa-book">  {{ .WordCount  }} words</span> | <span class="fas fa-clock">  {{ .ReadingTime  }} minutes</span>
+                                </span></span> | <span class="fas fa-book"><p> </p>{{ .WordCount  }} words</span> | <span class="fas fa-clock"><p> </p>{{ .ReadingTime  }} minutes</span>
                             {{ end }}
                             <!-- Don't show "Last Modified on" if update happened on the same day. -->
                             {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
